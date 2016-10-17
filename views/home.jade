@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div.welcome-message
+    if (!user)
+      p Welcome #{user.username}, Lets Find You A New Podcast!
+      a(href="/logout") Logout
+    if (user)
+      p Welcome #{user.username}, time to explore!
+      a(href="/logout") Logout
+
+  div
+    h1 Find Podcasts
+    //- p Welcome to #{title}
+    form.searchForm(action="/podcasts", method="get")  
+      input(type="text", name="name")
+      input(type="submit", value="search")

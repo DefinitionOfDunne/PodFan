@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 I found #{podcasts.length} shows to check out!
+  ul
+  for podcast in podcasts
+    form(class="results" name="get-podcasts", action="podcasts", method="post")
+      div
+        h2 #{podcast.collectionName}
+        img(src=podcast.artworkUrl100)
+        input(type="hidden" name="rssUrl" value="#{podcast.feedUrl}")
