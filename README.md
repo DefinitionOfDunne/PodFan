@@ -1,2 +1,2 @@
 # PodFan
-An awesome little app for Podcast recommendations and exploration.
+An app for Podcast recommendations and exploration.
