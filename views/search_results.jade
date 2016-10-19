@@ -7,5 +7,5 @@ block content
     form(class="results" name="get-podcasts", action="podcasts", method="post")
       div
         h2 #{podcast.collectionName}
-        img(src=podcast.artworkUrl100)
+        img(src=podcast.artworkUrl100 alt="Podcast-logo")
         input(type="hidden" name="rssUrl" value="#{podcast.feedUrl}")

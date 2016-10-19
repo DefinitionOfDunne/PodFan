@@ -8,9 +8,11 @@ var session = require('cookie-session');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
+var flash = require('connect-flash'); 
 var LocalStrategy = require('passport-local').Strategy;
 
 var app = express();
+require('dotenv').config();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -26,11 +28,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 var User = require('./models/user');
+app.use(flash());
+passport.authenticate('local', { failureFlash: 'Invalid username or password.' });
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-var connection = mongoose.connect('mongodb://localhost/podcast-app');
+var connection = mongoose.connect(process.env.MLAB_URI);
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.connection.once('open', function() {
     console.info('Connected to database!');
@@ -53,8 +57,8 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.listen(3010, function() {
-    console.log('Listening on localhost:' + 3010);
+app.listen(8080, function() {
+    console.log('Listening on:' + 8080);
 });
 
 

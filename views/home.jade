@@ -3,7 +3,7 @@ extends layout
 block content
   div.welcome-message
     if (!user)
-      p Welcome #{user.username}, Lets Find You A New Podcast!
+      p Welcome Guest User, Lets Find You A New Podcast!
       a(href="/logout") Logout
     if (user)
       p Welcome #{user.username}, time to explore!
