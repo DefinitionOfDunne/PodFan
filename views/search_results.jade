@@ -1,7 +1,9 @@
 extends layout
 
 block content
-  h1 I found #{podcasts.length} shows to check out!
+  h2.subtitle I found #{podcasts.length} shows to check out!
+  a(href='/home')
+    button.back-button(type="button") Or Search Again
   ul
   for podcast in podcasts
     form(class="results" name="get-podcasts", action="podcasts", method="post")

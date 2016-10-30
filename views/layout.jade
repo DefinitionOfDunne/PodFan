@@ -8,9 +8,13 @@ html
 body
     header
       nav
-        ul 
+        ul
+        if (!user) 
           li
             a(href="/login") Login
           li
-            a(href="/register") Sign up
+            a(href="/register") Create An Account
+        if (user)
+          li
+            a(href="/logout") Log Out
 block content

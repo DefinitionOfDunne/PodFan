@@ -2,7 +2,7 @@ extends layout
 
 block content
   .container
-    h1 Login Page
+    h2.subtitle Login Here!
     form(class='auth-form' role='form', action="/login",method="post")
       .form-group
           input.form-control(type='text', name="username", placeholder='Enter Username')
@@ -11,4 +11,4 @@ block content
       button.btn.btn-default(type='submit') Submit
       &nbsp;
       a(href='/')
-        button.btn.btn-primary(type="button") Cancel
+        button.btn.btn-default(type="button") Cancel

@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
 
 body {
     padding: 0px;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Dosis', sans-serif; 
 }
 
 a {
     color: rgb(49, 130, 222);
+    text-decoration: none;
 }
 
 header {
@@ -17,21 +19,20 @@ header {
 
 header nav {
     float: right;
-}
-
-ul {
     display: inline-flex;
-    list-style: none;
+    list-style: none;   
 }
 
 h1 {
     text-align: center;
-    font-size: 2.25rem;
+    font-size: 4rem;
     color: rgb(49, 130, 222);
+    font-family: 'Architects Daughter', cursive;
 }
 
 li {
     margin: 1rem;
+    text-decoration: none;
 }
 
 form {
@@ -40,13 +41,23 @@ form {
     width: 50%;
     border: 2px solid gray;
 }
-
-.mainLogo {
-    margin: 4rem auto;
-    display: block;
-    height: 16rem;
+.subtitle {
+    text-align: center;
+    color: rgb(49, 130, 222);
+    width: 90%
+    margin: 0 auto;
 }
-
+.mainLogo {
+    margin: 2rem auto;
+    display: block;
+    height: 14rem;
+}
+.back-button {
+    margin: 0 auto;
+    width: 10rem;
+    text-align: center;
+    display: block;
+}
 .results {
     background-color: lightgrey;
 }
@@ -67,62 +78,72 @@ form {
     border: 0;
 }
 
-.searchForm input {
+.form-group input {
     display: block;
     text-align: center;
     margin: 1rem auto;
-    width: 15rem;
+    width: 25rem;
 }
 
 .auth-form {
-    border: 10px solid rgb(49, 130, 222);
+    border: 5px solid rgb(49, 130, 222);
     padding: 3rem;
 }
 
 .welcome-message {
     text-align: center;
     font-size: 1.5rem;
-    margin: 5rem;
+    margin: 4rem;
 }
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 750px) {
     header {
         height: 100%;
     }
     header nav {
-        text-align: center;
-        font-size: 5rem;
+        text-align: right;
         float: none;
     }
-    h1 {
-        font-size: 5.5rem;
-        margin: 10rem 0rem;
-    }
-    .mainLogo {
-        height: 30rem;
-        margin: 1rem auto;
-    }
+
     input {
         width: 75%;
-        height: 5rem;
-        font-size: 2.5rem;
-    }
-    button {
-        width: 38%;
-        height: 5rem;
-        font-size: 2.5rem;
+        height: 2rem;
     }
     form {
         width: 70%;
     }
     .welcome-message {
         text-align: center;
-        font-size: 4rem;
         margin: 5rem;
     }
-    .searchForm input {
-        width: 35rem;
+    .search {
+        border: 1px solid black;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        font-size: 100%;
+    }
+    header {
+        height: 100%;
+    }
+    header a {
+        text-align: center;
+        float: none;
+    }
+
+    .form-group input  {
+        width: 50%;
+        height: 2rem;
+    }
+    form {
+        width: 90%;
+    }
+    .welcome-message {
+        text-align: center;
+        margin: 5rem;
     }
     .search {
         border: 1px solid black;

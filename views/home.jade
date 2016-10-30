@@ -4,10 +4,8 @@ block content
   div.welcome-message
     if (!user)
       p Welcome Guest User, Lets Find You A New Podcast!
-      a(href="/logout") Logout
     if (user)
       p Welcome #{user.username}, time to explore!
-      a(href="/logout") Logout
 
   div
     h1 Find Podcasts
