@@ -11,5 +11,5 @@ block content
     h1 Find Podcasts
     //- p Welcome to #{title}
     form.searchForm(action="/podcasts", method="get")  
-      input.search(type="text", name="name")
-      input(type="submit", value="search")
+      input.search(type="text", name="name", placeholder="Search Here!")
+      button.btn.btn-primary#submit(type="submit", value="search") Go

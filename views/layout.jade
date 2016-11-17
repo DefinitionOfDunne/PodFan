@@ -7,13 +7,9 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
 body
     header
+      h1.banner-title PodFan
       nav
         ul
-        if (!user) 
-          li
-            a(href="/login") Login
-          li
-            a(href="/register") Create An Account
         if (user)
           li
             a(href="/logout") Log Out

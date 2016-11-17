@@ -2,14 +2,16 @@ extends layout
 
 block content
   .container
-    h2.subtitle Create An Acount!
+    h2.subtitle Create An Account!
     br
     form(class='auth-form' role='form', action="/register",method="post")
       .form-group
-          input.form-control(type='text', name="username", placeholder='Pick A Username')
+        label Username
+            input.form-control(type='text', name="username", placeholder='Pick A Username')
       .form-group
-        input.form-control(type='password', name="password", placeholder='Choose A Password')
-      button.btn.btn-default(type='submit') Submit
+        label Password
+          input.form-control(type='password', name="password", placeholder='Choose A Password')
+      button.btn.btn-primary#submit(type='submit') Register
       &nbsp;
       a(href='/')
         button.btn.btn-default(type="button") Cancel

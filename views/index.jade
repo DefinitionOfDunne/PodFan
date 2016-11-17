@@ -1,8 +1,25 @@
 extends layout
 
 block content
-  div
-    h1 PodFan.
-    h2.subtitle Here To Help You Find Your New Favorite Pod
-    img.mainLogo(src="http://www.freeiconspng.com/uploads/podcast-icon-3.jpg")
-    h2.subtitle Because The Only Thing More Boring Then Listening To A Podcast Is Deciding Which One To Choose
+	.containerR			
+		h2.subtitle Explore and Discover Your New Favorite Podcast
+		h2.subtitle In Just A Few Seconds.
+		img.mainLogo(src="http://www.freeiconspng.com/uploads/podcast-icon-3.jpg")
+		h3.subhead Because The Only Thing More Boring Then Listening To A Podcast
+		h3.subhead Is Fussing Over Which To Pick.
+		
+	.containerL
+		h2.subtitle Login Here!
+		form(class='auth-form' role='form', action="/login",method="post")
+			.form-group
+				label Username
+					input.form-control(type='text', name="username", placeholder='Enter Username')
+			.form-group
+				label Password
+					input.form-control(type='password', name="password", placeholder='Password')
+			button.btn.btn-primary#submit(type='submit') Login
+			&nbsp;
+		ul.register-ul
+			li First Time User?
+			li
+				a(href="/register") Create An Account
