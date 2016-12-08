@@ -10,4 +10,5 @@ block content
       div
         h2 #{podcast.collectionName}
         img(src=podcast.artworkUrl100 alt="Podcast-logo")
-        input(type="hidden" name="rssUrl" value="#{podcast.feedUrl}")
+        a(href=podcast.collectionViewUrl target="_blank")
+          button.btn.btn-primary#info-button(type="button") Listen Or Learn More!

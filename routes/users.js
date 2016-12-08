@@ -29,12 +29,14 @@ router.post('/register', function(req, res, next) {
 });
 
 router.get('/login', function(req, res) {
-  res.render('login', {user: req.user});
+  res.render('login', {user: req.user, error: req.flash('error')});
 });
 
-router.post('/login', passport.authenticate('local'), function(req, res) {
-  res.redirect('/home');
-});
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/home',
+  failureRedirect: '/login',
+  failureFlash: true
+}));
 
 router.get('/logout', function(req, res) {
   req.logout();

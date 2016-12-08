@@ -5,7 +5,7 @@ html
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-body
+  body
     header
       h1.banner-title PodFan
       nav
@@ -13,4 +13,8 @@ body
         if (user)
           li
             a(href="/logout") Log Out
+    if (error && error.length > 0)
+      br
+      h4.error-msg= error
+      br
 block content
