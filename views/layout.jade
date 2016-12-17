@@ -12,7 +12,11 @@ html
         ul
         if (user)
           li
-            a(href="/logout") Log Out
+            a(href="/home") Search
+          li
+            a(href="/favorites") Favorites
+          li
+            a(href="/logout") Log Out       
     if (error && error.length > 0)
       br
       h4.error-msg= error

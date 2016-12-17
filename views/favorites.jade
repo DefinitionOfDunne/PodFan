@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div.welcome-message
+    if (!user)
+      p Sorry, please create an account to create a Favorites List!
+    if (user)
+      p #{user.username}, here are you saved favorites!
+
+  div
+    h1 Your List
+    ul.fav-list

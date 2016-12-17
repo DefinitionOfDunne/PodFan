@@ -10,6 +10,11 @@ router.get('/home', function(req, res) {
   res.render('home', { user: req.user });
 });
 
+router.get('/favorites', function(req, res) {
+  res.render('favorites', { user: req.user });
+  console.log(req.user);
+});
+
 router.get('/register', function(req, res) {
   res.render('register', {});
 });

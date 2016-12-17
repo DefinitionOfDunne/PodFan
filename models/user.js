@@ -7,7 +7,8 @@ var User = new Schema({
   	type: String, 
   	unique: true 
   },
-  password: String
+  password: String,
+  favorites: [{type: Schema.Types.ObjectId, ref: 'Podcast' }]
 });
 
 User.plugin(passportLocalMongoose);
